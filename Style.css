@@ -1,0 +1,15 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  section article {
+    width: 33%;
+    float: left;
+  }
+  section p {
+    margin: 5px 0;
+  }

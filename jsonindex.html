@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>familia</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+   <header>
+        
+      </header>
+
+      <section>
+          <h3>Miembros de la familia.  Nombres:</h3>
+          <p id="nombres">  </p>
+
+          <h3>numero favorito de cada uno:</h3>
+          <p id="edades">  </p>
+
+          <h3>Tiene trabajo:</h3>
+          <p id="trabajos"> </p>
+
+          <h3>Fecha de nacimiento:</h3>
+          <p id="fechas"> </p>
+      </section>
+
+    <script>
+    const header = document.querySelector('header');
+    const section = document.querySelector('section');
+
+    const url = 'personas.json';
+    const request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = 'json';
+    request.send();
+
+
+    request.onload = () => {
+      //console.log("Respuesta exitosa del servidor");
+      const response = request.response;
+      //console.log(response);
+      
+      
+      //obtenerTitulo(response);
+      
+      mostrarDatos(response);
+      
+    }
+
+    function mostrarDatos(jsonObj) {
+      const miH1 = document.createElement('h1');
+      miH1.textContent = jsonObj['Personas'];
+      header.appendChild(miH1);
+
+      const miembros = jsonObj['Lista'];
+      
+      for(i in miembros){
+        console.log(miembros[i].Nombre);
+
+        if(i != 4){
+          document.getElementById("nombres").innerHTML += miembros[i].Nombre + ", ";
+        }
+        else{
+          document.getElementById("nombres").innerHTML += miembros[i].Nombre + ".";
+        }
+
+        if(i != 4){
+          document.getElementById("edades").innerHTML += miembros[i].númerof + ", ";
+        }
+        else{
+          document.getElementById("edades").innerHTML += miembros[i].númerof + ". ";
+        }
+
+        if(miembros[i].Trabajo == true){
+          document.getElementById("trabajos").innerHTML += miembros[i].Nombre + " tiene trabajo.<br />";
+        }
+        else{
+          document.getElementById("trabajos").innerHTML += miembros[i].Nombre + " no tiene trabajo.<br />";
+        }
+
+        document.getElementById("fechas").innerHTML += miembros[i].Nombre + " nació el: " + miembros[i].Nacimiento + "<br />";
+        
+      }    
+    }
+
+    </script>
+  </body>
+</html>
+
+
+
+
