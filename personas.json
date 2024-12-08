@@ -1,0 +1,32 @@
+{"Personas":"Mi familia",
+"Lista":[{
+        "nombre":"Jonathan",
+        "numerof":8,
+        "trabajo":false,
+        "nacimiento":"2006-04-16 "
+    },
+    {
+        "nombre":"Alejo",
+        "numerof":18,
+        "trabajo":true,
+        "nacimiento":"2006-05-21" 
+    },
+    {
+        "nombre":"Baez",
+        "numerof":12,
+        "trabajo":false,
+        "nacimiento":"2006-07-25"
+    },
+    {
+        "nombre":"Liam",
+        "numerof":11,
+        "trabajo":true,
+        "nacimiento":"2006-03-06 "
+    },
+    {
+        "nombre":"Messi",
+        "numerof":6,
+        "trabajo":false,
+        "nacimiento":"2006-03-05"
+    }
+]}
